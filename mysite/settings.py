@@ -25,12 +25,16 @@ SECRET_KEY = '^+iljo@d(lh3r$c=iu-dj!i@!9c)x94^dwvqu&7c03jl07!bgs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.pepperexp.com',
+    '127.0.0.1',
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'homepage',
     'polls',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,3 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# save static css file
+STATIC_ROOT = os.path.join(BASE_DIR, "common_static")
+STATICFILES_DIRS = (
+    os.path.join(
+        BASE_DIR, "env/lib/python3.5/site-packages/django/contrib/admin/static/"),
+)

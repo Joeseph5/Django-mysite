@@ -4,7 +4,18 @@
 
 ### Environment Setting
 
-- pip install -r requirement.txt
+```shell
+# 生成并激活env环境
+python3 -m venv env
+source env/bin/activate
+# 安装运行环境所需要的库
+pip install -r requirement.txt
+# 更新db.sqlite
+python manage.py migrate
+# 没有admin用户，需要重新创建
+# 出现database无法读写、打开问题，更改database权限：
+chown www-data. .
+```
 
 ### polls app：
 
